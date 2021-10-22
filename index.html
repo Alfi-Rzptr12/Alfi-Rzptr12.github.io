@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="kotak">
+        <h2 class="halo">Hello </h2><p class="kamu">You There</p><p class="nama">My Name Is Alfi</p>
+    </div>
+    <div class="geser">
+        <h2 id="indikator">LIGHTS</h2>
+        <input id="saklar" class="toggle" type="checkbox">
+    </div>
+    <div id="about"></div>
+    <div class="kontak"></div>
+
+    <script>
+        let saklar = document.getElementById("saklar");
+        let element = document.body;
+        let hilang = document.getElementById("about");
+        saklar.addEventListener("click", function(){
+            if (saklar.checked){
+                status.innerHTML = "OFF";
+                hilang.style.display = "block";
+            } else if (!saklar.checked){
+                status.innerHTML = "ON";
+                hilang.style.display = "none";
+            }
+        });
+
+
+    </script>
+</body>
+</html>
+<style>
+   body{
+       display: flex;
+       height: 100%;
+       background-size: cover;
+       background: black;
+       font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   }
+   .dark-mode{
+       background-color: black;
+   }
+   #about{
+       display: none;
+       position: relative;
+       width: 300px;
+       height: 234px;
+       border: 3px solid #50bfe6;
+       top: 62px;
+       right: 310px;
+   }
+   #indikator{
+       -webkit-text-fill-color: #50bfe6;
+       margin-left: 15px;
+   }
+   div.geser{
+       margin-left: 350px;
+       margin-top: -28px;
+   }
+   .toggle {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 98px;
+      height: 30px;
+      position: relative;
+      border-radius: 20px;
+      display: inline-block;
+      overflow: hidden;
+      outline: none;
+      border: 1px solid #50bfe6;
+      margin-top: -18px;
+      cursor: pointer;
+      background-color: #707070;
+      transition: background-color ease 0.3s;
+    }
+    .toggle:before {
+      content: "ON      OFF";
+      display: block;
+      position: absolute;
+      z-index: 2;
+      width: 25px;
+      height: 25px;
+      background: black;
+      left: 2px;
+      top: 2px;
+      border-radius: 50%;
+      font:bold 12px/28px Helvetica;
+      text-indent: -40px;
+      word-spacing: 60px;
+      color: #fff;
+      text-shadow: -1px -1px rgba(0,0,0,0.15);
+      white-space: nowrap;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+    }
+    .toggle:checked {background: #707070;}
+    .toggle:checked:before {left:70px;}
+   .kotak{
+       color: white;
+       text-align: center;
+       position: relative;
+       width: 550px;
+       height: 300px;
+       left: 20px;
+       margin-top: 0px;
+       -webkit-box-reflect: below 1px linear-gradient(transparent,#0003);
+   }
+   .kotak:before{
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 200px;
+       height: 200px;
+       border-top: 3px solid #50bfe6;
+       border-left: 3px solid #50bfe6;
+       transition: 0.5s;
+   }
+   .kotak:hover:before{
+       width: 547px;
+       height: 295px;
+       box-shadow: 0 0 150px #50bfe6;
+       box-shadow: 0 0 30px #50bfe6 inset;
+   }
+   .kotak:after{
+       content: '';
+       position: absolute;
+       bottom: 0;
+       right: 0;
+       width: 200px;
+       height: 200px;
+       border-bottom: 3px solid #50bfe6;
+       border-right: 3px solid #50bfe6;
+       transition: 0.5s;
+   }
+   .kotak:hover:after{
+        width: 547px;
+        height: 295px;
+        box-shadow: 0 0 150px #50bfe6;
+   }
+   .halo,.kamu,.nama{
+       -webkit-text-fill-color:aqua;
+       -webkit-text-stroke: aqua;
+   }
+   .halo,.kamu,.nama{
+       text-shadow: 0 0 30px #50bfe6;
+   }
+   .halo{
+        font-size: 100px;
+        margin-left: -235px;
+        margin-top: 3px;
+        font-weight: lighter;
+   }
+   .kamu{
+       font-size: 70px;
+       font-weight:lighter;
+       margin-right: 150px;
+       margin-top: -80px;
+   }
+   .nama{
+       font-size: 70px;
+       font-weight:lighter;
+       margin-right: 0px;
+       margin-top: -90px;
+   }
+   @media screen and (max-width: 576px){
+       .halo{
+           font-size: 70px;
+       }
+   }
+</style>
